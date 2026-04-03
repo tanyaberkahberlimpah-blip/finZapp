@@ -61,9 +61,6 @@
       --accent: #d946ef;
       --gradient-main: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #d946ef 100%);
       --text-on-gradient: #ffffff; /* Aman karena gradient gelap */
-      --success-on-grad: #6ee7b7;
-      --danger-on-grad: #fda4af;
-      --info-on-grad: #93c5fd;
       --shadow-glow: 0 10px 30px -10px rgba(168, 85, 247, 0.3);
     }
 
@@ -72,9 +69,6 @@
       --accent: #facc15;
       --gradient-main: linear-gradient(135deg, #f472b6 0%, #fbbf24 100%);
       --text-on-gradient: #4c0519; /* Gradasi terang, butuh teks gelap */
-      --success-on-grad: #065f46;
-      --danger-on-grad: #9f1239;
-      --info-on-grad: #1e3a8a;
       --shadow-glow: 4px 4px 0px rgba(244, 114, 182, 0.3);
     }
 
@@ -83,9 +77,6 @@
       --accent: #b08968;
       --gradient-main: linear-gradient(135deg, #576b53 0%, #7f9c78 100%);
       --text-on-gradient: #ffffff;
-      --success-on-grad: #a7f3d0;
-      --danger-on-grad: #fecdd3;
-      --info-on-grad: #bfdbfe;
       --shadow-glow: 0 10px 30px -10px rgba(87, 107, 83, 0.2);
     }
 
@@ -94,9 +85,6 @@
       --accent: #8b5cf6;
       --gradient-main: linear-gradient(45deg, #06b6d4, #8b5cf6, #ec4899);
       --text-on-gradient: #ffffff;
-      --success-on-grad: #6ee7b7;
-      --danger-on-grad: #fda4af;
-      --info-on-grad: #93c5fd;
       --shadow-glow: 0 8px 32px rgba(31, 38, 135, 0.15);
     }
 
@@ -105,9 +93,6 @@
       --accent: #cbd5e1;
       --gradient-main: linear-gradient(135deg, #94a3b8 0%, #cbd5e1 100%);
       --text-on-gradient: #0f172a; /* Gradasi terang, butuh teks gelap */
-      --success-on-grad: #065f46;
-      --danger-on-grad: #9f1239;
-      --info-on-grad: #1e3a8a;
       --shadow-glow: 0 4px 15px -1px rgba(148, 163, 184, 0.2);
     }
     
@@ -128,9 +113,7 @@
 
     /* --- COMPONENTS --- */
     .font-heading { font-family: 'Outfit', sans-serif; }
-    
     .swal2-container { z-index: 9999 !important; }
-    
     .font-poppins { font-family: 'Poppins', sans-serif; font-weight: 900; }
     .text-stroke-white { -webkit-text-stroke: 1.5px #ffffff; }
     
@@ -187,7 +170,7 @@
     }
     #ai-sidebar.active { transform: translateX(0); }
 
-    /* --- BALANCE CARD (Funky Gradient) --- */
+    /* --- BALANCE CARD --- */
     .balance-card { 
         background: var(--gradient-main); 
         border-radius: 36px; padding: 32px 24px; color: var(--text-on-gradient); 
@@ -220,7 +203,7 @@
     }
     .fab-btn:active { transform: scale(0.9) rotate(45deg); }
 
-    /* --- MODALS (Bottom Sheet Style) --- */
+    /* --- MODALS --- */
     .modal-overlay { 
         position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); z-index: 2000; 
         display: none; align-items: flex-end; justify-content: center;
@@ -245,7 +228,6 @@
 
     @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
     
-    /* --- INPUTS --- */
     .input-field { 
         width: 100%; padding: 18px; border-radius: 20px; 
         border: 2px solid var(--border-color); background: var(--input-bg); 
@@ -254,7 +236,6 @@
     }
     .input-field:focus { border-color: var(--primary); background: var(--bg-card); }
     
-    /* --- MISC --- */
     .grid-icon-item { 
         display: flex; flex-direction: column; align-items: center; justify-content: center; 
         gap: 10px; padding: 16px; border: 2px solid var(--border-color); 
@@ -265,30 +246,15 @@
         border-color: var(--primary); background: color-mix(in srgb, var(--primary) 10%, transparent); transform: translateY(-4px); 
     }
     
-    /* CHAT BUBBLES */
     .chat-bubble { padding: 12px 18px; border-radius: 24px; margin-bottom: 10px; font-size: 13px; line-height: 1.5; max-width: 85%; }
     .chat-user { background: var(--primary); color: var(--text-on-gradient); align-self: flex-end; border-bottom-right-radius: 4px; }
     .chat-bot { background: var(--bg-body); color: var(--text-main); align-self: flex-start; border-bottom-left-radius: 4px; border: 1px solid var(--border-color); }
 
-    /* ACTION BUTTONS */
     .action-btn { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 16px; transition: 0.2s; cursor: pointer; }
     .action-btn:hover { transform: scale(1.1); }
     .action-btn-edit { background: color-mix(in srgb, var(--text-info) 15%, transparent); color: var(--text-info); }
     .action-btn-del { background: color-mix(in srgb, var(--text-negative) 15%, transparent); color: var(--text-negative); }
 
-    /* FAB MENU */
-    .fab-action-container {
-        position: fixed; bottom: 110px; right: 24px; z-index: 899;
-        display: flex; flex-direction: column; gap: 12px; align-items: flex-end;
-        pointer-events: none; opacity: 0; transition: 0.3s; transform: translateY(20px);
-    }
-    .fab-action-container.active { pointer-events: auto; opacity: 1; transform: translateY(0); }
-
-    .fab-action-item { display: flex; align-items: center; gap: 12px; cursor: pointer; }
-    .fab-action-btn { width: 52px; height: 52px; border-radius: 20px; font-size: 22px; border: none; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); color: white;}
-    .fab-action-label { background: var(--bg-card); color: var(--text-main); padding: 8px 16px; border-radius: 14px; font-weight: 800; font-size: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); letter-spacing: 0.5px; border: 1px solid var(--border-color); }
-
-    /* CALENDAR */
     .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; text-align: center; margin-top: 16px; }
     .cal-day { width: 100%; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; border-radius: 10px; font-weight: 700; font-size: 13px; cursor: pointer; transition: 0.2s; color: var(--text-main); }
     .cal-day:hover { background: var(--border-color); }
@@ -299,12 +265,9 @@
     .quick-btn { padding: 12px; border-radius: 16px; border: 1px solid var(--border-color); color: var(--text-muted); text-align: center; font-size: 12px; font-weight: 700; cursor: pointer; transition: 0.2s; }
     .quick-btn.active { background: var(--text-main); color: var(--bg-card); border-color: var(--text-main); }
     
-    /* TX TYPE PILL */
     .tx-type-pill { flex: 1; padding: 12px; text-align: center; border-radius: 99px; font-size: 12px; font-weight: 700; cursor: pointer; color: var(--text-muted); transition: 0.2s; }
     .tx-type-pill.active { background: var(--bg-card); color: var(--text-main); box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    .big-amount-input { width: 100%; background: transparent; border: none; font-size: 32px; font-weight: 800; color: var(--text-main); outline: none; font-family: 'Outfit', sans-serif; }
     
-    /* GLITCH EFFECT */
     @keyframes shake-glitch {
         0% { transform: translate(1px, 1px) rotate(0deg); border-color: #f43f5e; box-shadow: 0 0 20px rgba(244,63,94,0.6); filter: hue-rotate(90deg); }
         10% { transform: translate(-1px, -2px) rotate(-1deg); }
@@ -363,25 +326,19 @@
       </div>
   </div>
 
-  <!-- AUTH SECTION (NEW MODERN DARK GLASSMORPHISM WITH TABS) -->
+  <!-- AUTH SECTION -->
   <section id="auth-section" class="fixed inset-0 z-[3000] flex items-center justify-center p-6 bg-[#09090b] overflow-hidden">
-    
-    <!-- Ambient Background Glows -->
     <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
         <div class="absolute -top-[10%] -left-[10%] w-96 h-96 bg-purple-600/30 rounded-full mix-blend-screen filter blur-[100px] animate-pulse"></div>
         <div class="absolute -bottom-[10%] -right-[10%] w-96 h-96 bg-pink-600/30 rounded-full mix-blend-screen filter blur-[100px] animate-pulse" style="animation-delay: 2s;"></div>
     </div>
-
-    <!-- Glassmorphism Login Card -->
     <div id="login-card" class="w-full max-w-sm p-8 text-center relative z-10 transition-all duration-300 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[32px] shadow-2xl max-h-[90vh] overflow-y-auto no-scrollbar">
-      
       <div class="mb-6">
           <h1 class="text-5xl tracking-tighter mb-2 font-poppins text-stroke-white bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent drop-shadow-sm">FinZ App</h1>
           <h2 id="auth-greeting" class="text-2xl font-bold mt-4 mb-2 text-white tracking-tight">Welcome Back! 👋</h2>
           <p class="text-sm font-medium text-gray-400">Manage Money, The Gen Z Way.</p>
       </div>
 
-      <!-- TABS NAVIGATION -->
       <div class="flex w-full mb-6 border-b border-white/10">
           <button id="tab-btn-login" onclick="switchAuthTab('login')" class="flex-1 pb-3 text-sm font-bold border-b-2 border-purple-500 text-purple-400 transition-all">Masuk</button>
           <button id="tab-btn-register" onclick="switchAuthTab('register')" class="flex-1 pb-3 text-sm font-bold border-b-2 border-transparent text-gray-500 hover:text-gray-300 transition-all">Daftar Akun</button>
@@ -389,47 +346,38 @@
       
       <!-- FORM: LOGIN -->
       <div id="auth-form-login" class="space-y-4 mb-6 text-left relative z-20 transition-opacity duration-300 block">
-          <!-- Email Input -->
           <div class="relative group">
               <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-500 group-focus-within:text-purple-400 transition-colors">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
               </div>
               <input type="email" id="login-email" onkeypress="if(event.key==='Enter') handleLogin()" class="w-full pl-12 pr-4 py-4 bg-black/40 border border-white/10 rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all" placeholder="Email kamu...">
           </div>
-          
-          <!-- Password Input (dengan Ikon Mata) -->
           <div class="relative group">
               <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-500 group-focus-within:text-pink-400 transition-colors">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
               </div>
               <input type="password" id="login-password" onkeypress="if(event.key==='Enter') handleLogin()" class="w-full pl-12 pr-12 py-4 bg-black/40 border border-white/10 rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-pink-500 focus:ring-1 focus:ring-pink-500 transition-all" placeholder="Password...">
               <button type="button" onclick="togglePassword('login-password', this)" class="absolute inset-y-0 right-0 pr-4 pl-2 flex items-center text-gray-500 hover:text-pink-400 transition-colors focus:outline-none">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"></path>
               </button>
           </div>
-
           <button id="btn-login" onclick="handleLogin()" class="w-full py-4 mt-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-2xl font-bold text-lg shadow-[0_4px_20px_rgba(168,85,247,0.4)] active:scale-95 hover:shadow-[0_4px_25px_rgba(168,85,247,0.6)] transition-all relative z-20">Masuk</button>
       </div>
 
       <!-- FORM: REGISTER -->
       <div id="auth-form-register" class="space-y-4 mb-2 text-left relative z-20 transition-opacity duration-300 hidden">
-          <!-- Name Input -->
           <div class="relative group">
               <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-500 group-focus-within:text-cyan-400 transition-colors">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
               </div>
               <input type="text" id="reg-name" onkeypress="if(event.key==='Enter') handleRegister()" class="w-full pl-12 pr-4 py-4 bg-black/40 border border-white/10 rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all" placeholder="Nama Panggilan">
           </div>
-
-          <!-- Email Input -->
           <div class="relative group">
               <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-500 group-focus-within:text-purple-400 transition-colors">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
               </div>
               <input type="email" id="reg-email" onkeypress="if(event.key==='Enter') handleRegister()" class="w-full pl-12 pr-4 py-4 bg-black/40 border border-white/10 rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all" placeholder="Email aktif...">
           </div>
-          
-          <!-- Password Input (dengan Ikon Mata) -->
           <div class="relative group">
               <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-500 group-focus-within:text-pink-400 transition-colors">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
@@ -439,8 +387,6 @@
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
               </button>
           </div>
-
-          <!-- Confirm Password Input (dengan Ikon Mata) -->
           <div class="relative group">
               <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-500 group-focus-within:text-pink-400 transition-colors">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
@@ -450,16 +396,13 @@
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
               </button>
           </div>
-
           <button id="btn-register" onclick="handleRegister()" class="w-full py-4 mt-6 bg-white text-black rounded-2xl font-bold text-lg shadow-[0_4px_20px_rgba(255,255,255,0.2)] active:scale-95 hover:bg-gray-100 transition-all relative z-20">Daftar Sekarang</button>
       </div>
-
     </div>
   </section>
 
   <!-- MAIN APP CONTAINER -->
   <main id="main-app" class="container mx-auto max-w-md min-h-screen pb-32 relative hidden">
-      
     <!-- HEADER -->
     <header class="sticky-header sticky top-0 z-50 px-6 py-5 flex items-center justify-between">
         <div class="flex items-center gap-4">
@@ -474,22 +417,19 @@
         </div>
         <div class="flex items-center gap-3">
             <button onclick="toggleAICoach()" class="w-12 h-12 rounded-2xl bg-primary-alpha text-2xl flex items-center justify-center border border-[var(--border-glass)] active:scale-90 transition-transform">🤖</button>
-            <button id="theme-toggle-btn" onclick="toggleDarkMode()" class="text-xl w-10 h-10 flex items-center justify-center text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors">🌙</button>
+            <button type="button" id="theme-toggle-btn" onclick="toggleDarkMode()" class="text-xl w-10 h-10 flex items-center justify-center text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors">🌙</button>
         </div>
     </header>
 
     <!-- CONTENT VIEWS -->
     <div class="px-6 py-4 space-y-8">
-
         <!-- VIEW: HOME (BERANDA) -->
         <div id="view-home" class="space-y-8">
-            <!-- Filter Periode -->
             <div onclick="toggleDateModal(true)" class="glass-card px-5 py-4 flex items-center justify-between cursor-pointer active:scale-95 transition-transform text-[var(--text-main)]">
                 <div class="flex items-center gap-4"><span class="text-2xl">🗓️</span><span id="home-period-label" class="text-sm font-bold">Bulan Ini</span></div>
                 <span class="text-[var(--text-muted)] text-xs">▼</span>
             </div>
             
-            <!-- Card Utama -->
             <div class="balance-card">
                 <div class="flex justify-between items-start mb-2">
                     <span class="text-xs font-black tracking-widest opacity-90 uppercase">Total Saldo</span>
@@ -497,37 +437,18 @@
                 </div>
                 <h2 id="home-balance" class="text-4xl font-heading font-extrabold mb-8">Rp 0</h2>
                 <div class="balance-sub-grid">
-                    <div class="balance-sub-item">
-                        <p class="text-[10px] font-bold uppercase opacity-80 mb-1">Pemasukan</p>
-                        <p id="home-inc" class="text-sm font-black text-[var(--success-on-grad)]">Rp 0</p>
-                    </div>
-                    <div class="balance-sub-item">
-                        <p class="text-[10px] font-bold uppercase opacity-80 mb-1">Pengeluaran</p>
-                        <p id="home-exp" class="text-sm font-black text-[var(--danger-on-grad)]">Rp 0</p>
-                    </div>
-                    <div class="balance-sub-item">
-                        <p class="text-[10px] font-bold uppercase opacity-80 mb-1">Tabungan</p>
-                        <p id="home-sav" class="text-sm font-black text-[var(--info-on-grad)]">Rp 0</p>
-                    </div>
-                    <div class="balance-sub-item">
-                        <p class="text-[10px] font-bold uppercase opacity-80 mb-1">Investasi</p>
-                        <p id="home-inv" class="text-sm font-black text-[var(--warn-on-grad)]">Rp 0</p>
-                    </div>
+                    <div class="balance-sub-item"><p class="text-[10px] font-bold uppercase opacity-80 mb-1">Pemasukan</p><p id="home-inc" class="text-sm font-black text-[var(--success-on-grad)]">Rp 0</p></div>
+                    <div class="balance-sub-item"><p class="text-[10px] font-bold uppercase opacity-80 mb-1">Pengeluaran</p><p id="home-exp" class="text-sm font-black text-[var(--danger-on-grad)]">Rp 0</p></div>
+                    <div class="balance-sub-item"><p class="text-[10px] font-bold uppercase opacity-80 mb-1">Tabungan</p><p id="home-sav" class="text-sm font-black text-[var(--info-on-grad)]">Rp 0</p></div>
+                    <div class="balance-sub-item"><p class="text-[10px] font-bold uppercase opacity-80 mb-1">Investasi</p><p id="home-inv" class="text-sm font-black text-[var(--warn-on-grad)]">Rp 0</p></div>
                 </div>
             </div>
             
-            <!-- Grafik Pengeluaran -->
             <div class="glass-card p-6">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-base font-bold font-heading text-[var(--text-main)]">Trend Pengeluaran</h3>
-                    <span class="text-[10px] font-bold text-[var(--text-muted)] bg-[var(--input-bg)] px-2 py-1 rounded">Minggu Ini</span>
-                </div>
-                <div class="relative w-full h-48">
-                    <canvas id="expenseChart"></canvas>
-                </div>
+                <div class="flex justify-between items-center mb-4"><h3 class="text-base font-bold font-heading text-[var(--text-main)]">Trend Pengeluaran</h3><span class="text-[10px] font-bold text-[var(--text-muted)] bg-[var(--input-bg)] px-2 py-1 rounded">Minggu Ini</span></div>
+                <div class="relative w-full h-48"><canvas id="expenseChart"></canvas></div>
             </div>
 
-            <!-- Distribusi -->
             <div class="glass-card p-6">
                 <h3 class="text-base font-bold mb-6 font-heading text-[var(--text-main)]">Statistik Keuangan</h3>
                 <div class="flex items-center gap-8">
@@ -550,7 +471,6 @@
                 </div>
             </div>
             
-            <!-- Horizontal Cards -->
             <div class="grid grid-cols-2 gap-4">
                 <div class="glass-card p-5">
                     <p class="text-[10px] text-[var(--text-muted)] font-bold uppercase mb-2 tracking-wider">Top Pengeluaran</p>
@@ -564,7 +484,6 @@
                 </div>
             </div>
 
-            <!-- Daftar Transaksi -->
             <div>
                 <div class="flex justify-between items-center mb-4 px-1">
                     <h3 class="text-base font-bold font-heading text-[var(--text-main)]">Transaksi Terakhir</h3>
@@ -583,19 +502,16 @@
 
         <!-- VIEW: PLANNER -->
         <div id="view-planner" class="hidden space-y-6">
-            <!-- TAB NAVIGATION -->
             <div class="flex gap-4 overflow-x-auto no-scrollbar pb-2 border-b border-[var(--border-color)] px-1">
                 <button onclick="switchPlannerTab('overview')" id="tab-overview" class="whitespace-nowrap px-2 py-3 font-black text-sm text-[var(--primary)] border-b-2 border-[var(--primary)] transition-all">Overview</button>
                 <button onclick="switchPlannerTab('tips')" id="tab-tips" class="whitespace-nowrap px-2 py-3 font-bold text-sm text-[var(--text-muted)] border-b-2 border-transparent transition-all">Smart Tips</button>
                 <button onclick="switchPlannerTab('roadmap')" id="tab-roadmap" class="whitespace-nowrap px-2 py-3 font-bold text-sm text-[var(--text-muted)] border-b-2 border-transparent transition-all">Roadmap</button>
             </div>
             
-            <!-- 1. OVERVIEW TAB -->
             <div id="planner-overview" class="space-y-6 animate-fade pb-10">
                 <div class="bg-primary-alpha rounded-[28px] shadow-[var(--shadow-glow)] border border-[var(--border-color)] p-8 flex flex-col items-center text-center relative overflow-hidden">
                     <div class="absolute -top-4 -right-4 opacity-10 text-8xl">🩺</div>
                     <h3 class="text-xs font-bold uppercase opacity-80 mb-6 tracking-widest text-[var(--primary)]">Financial Health Score</h3>
-                    
                     <div class="relative w-40 h-40 mb-4 flex items-center justify-center">
                         <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-lg">
                             <circle cx="50" cy="50" r="45" stroke="var(--border-color)" stroke-width="8" fill="none"></circle>
@@ -603,77 +519,34 @@
                         </svg>
                         <span id="planner-score-val" class="absolute text-5xl font-black font-heading text-[var(--text-main)] drop-shadow-md">0</span>
                     </div>
-                    
                     <p id="planner-score-status" class="text-xl font-black text-[var(--text-main)]">Menghitung...</p>
                     <p class="text-xs text-[var(--text-muted)] mt-2 max-w-[200px] leading-relaxed">Skor berbasis rasio hutang, kapasitas tabungan & ketahanan aset.</p>
                 </div>
-
                 <div class="grid grid-cols-2 gap-4">
-                    <!-- Debt Ratio -->
                     <div class="glass-card p-5 relative flex flex-col justify-between">
                         <span onclick="showMetricInfo('debt')" class="absolute top-3 right-3 text-xs text-[var(--text-muted)] cursor-pointer hover:text-[var(--text-main)] transition-colors">ℹ️</span>
                         <div class="mb-4 w-10 h-10 rounded-2xl bg-negative-alpha flex items-center justify-center text-[var(--text-negative)] text-lg shadow-sm">💳</div>
-                        <div>
-                            <p class="text-[10px] font-bold uppercase text-[var(--text-muted)] mb-1">Debt Ratio</p>
-                            <div class="flex items-end gap-2 mb-2">
-                                <h4 id="metric-debt" class="text-2xl font-black font-heading text-[var(--text-main)]">0%</h4>
-                                <span id="metric-debt-ind" class="text-xs font-bold pb-1"></span>
-                            </div>
-                            <p class="text-[10px] text-[var(--text-positive)] font-bold bg-positive-alpha px-2 py-1 rounded w-fit">🎯 Target &lt;30%</p>
-                        </div>
+                        <div><p class="text-[10px] font-bold uppercase text-[var(--text-muted)] mb-1">Debt Ratio</p><div class="flex items-end gap-2 mb-2"><h4 id="metric-debt" class="text-2xl font-black font-heading text-[var(--text-main)]">0%</h4><span id="metric-debt-ind" class="text-xs font-bold pb-1"></span></div><p class="text-[10px] text-[var(--text-positive)] font-bold bg-positive-alpha px-2 py-1 rounded w-fit">🎯 Target &lt;30%</p></div>
                     </div>
-                    
-                    <!-- Saving Capacity -->
                     <div class="glass-card p-5 relative flex flex-col justify-between">
                         <span onclick="showMetricInfo('saving')" class="absolute top-3 right-3 text-xs text-[var(--text-muted)] cursor-pointer hover:text-[var(--text-main)] transition-colors">ℹ️</span>
                         <div class="mb-4 w-10 h-10 rounded-2xl bg-positive-alpha flex items-center justify-center text-[var(--text-positive)] text-lg shadow-sm">🏦</div>
-                        <div>
-                            <p class="text-[10px] font-bold uppercase text-[var(--text-muted)] mb-1">Saving Rate</p>
-                            <div class="flex items-end gap-2 mb-2">
-                                <h4 id="metric-saving" class="text-2xl font-black font-heading text-[var(--text-main)]">0%</h4>
-                                <span id="metric-saving-ind" class="text-xs font-bold pb-1"></span>
-                            </div>
-                            <p class="text-[10px] text-[var(--text-positive)] font-bold bg-positive-alpha px-2 py-1 rounded w-fit">🎯 Target &gt;20%</p>
-                        </div>
+                        <div><p class="text-[10px] font-bold uppercase text-[var(--text-muted)] mb-1">Saving Rate</p><div class="flex items-end gap-2 mb-2"><h4 id="metric-saving" class="text-2xl font-black font-heading text-[var(--text-main)]">0%</h4><span id="metric-saving-ind" class="text-xs font-bold pb-1"></span></div><p class="text-[10px] text-[var(--text-positive)] font-bold bg-positive-alpha px-2 py-1 rounded w-fit">🎯 Target &gt;20%</p></div>
                     </div>
-
-                    <!-- Asset Coverage -->
                     <div class="glass-card p-5 relative flex flex-col justify-between">
                         <span onclick="showMetricInfo('asset')" class="absolute top-3 right-3 text-xs text-[var(--text-muted)] cursor-pointer hover:text-[var(--text-main)] transition-colors">ℹ️</span>
                         <div class="mb-4 w-10 h-10 rounded-2xl bg-primary-alpha flex items-center justify-center text-[var(--primary)] text-lg shadow-sm">🛡️</div>
-                        <div>
-                            <p class="text-[10px] font-bold uppercase text-[var(--text-muted)] mb-1">Asset Cover</p>
-                            <div class="flex items-end gap-2 mb-2">
-                                <h4 id="metric-asset" class="text-2xl font-black font-heading text-[var(--text-main)]">0 Bln</h4>
-                                <span id="metric-asset-ind" class="text-xs font-bold pb-1"></span>
-                            </div>
-                            <p class="text-[10px] text-[var(--text-positive)] font-bold bg-positive-alpha px-2 py-1 rounded w-fit">🎯 Target &gt;6 Bln</p>
-                        </div>
+                        <div><p class="text-[10px] font-bold uppercase text-[var(--text-muted)] mb-1">Asset Cover</p><div class="flex items-end gap-2 mb-2"><h4 id="metric-asset" class="text-2xl font-black font-heading text-[var(--text-main)]">0 Bln</h4><span id="metric-asset-ind" class="text-xs font-bold pb-1"></span></div><p class="text-[10px] text-[var(--text-positive)] font-bold bg-positive-alpha px-2 py-1 rounded w-fit">🎯 Target &gt;6 Bln</p></div>
                     </div>
-
-                    <!-- Expense Ratio -->
                     <div class="glass-card p-5 relative flex flex-col justify-between">
                         <span onclick="showMetricInfo('expense')" class="absolute top-3 right-3 text-xs text-[var(--text-muted)] cursor-pointer hover:text-[var(--text-main)] transition-colors">ℹ️</span>
                         <div class="mb-4 w-10 h-10 rounded-2xl bg-warning-alpha flex items-center justify-center text-[var(--text-warning)] text-lg shadow-sm">💸</div>
-                        <div>
-                            <p class="text-[10px] font-bold uppercase text-[var(--text-muted)] mb-1">Expense Ratio</p>
-                            <div class="flex items-end gap-2 mb-2">
-                                <h4 id="metric-expense" class="text-2xl font-black font-heading text-[var(--text-main)]">0%</h4>
-                                <span id="metric-expense-ind" class="text-xs font-bold pb-1"></span>
-                            </div>
-                            <p class="text-[10px] text-[var(--text-positive)] font-bold bg-positive-alpha px-2 py-1 rounded w-fit">🎯 Target &lt;50%</p>
-                        </div>
+                        <div><p class="text-[10px] font-bold uppercase text-[var(--text-muted)] mb-1">Expense Ratio</p><div class="flex items-end gap-2 mb-2"><h4 id="metric-expense" class="text-2xl font-black font-heading text-[var(--text-main)]">0%</h4><span id="metric-expense-ind" class="text-xs font-bold pb-1"></span></div><p class="text-[10px] text-[var(--text-positive)] font-bold bg-positive-alpha px-2 py-1 rounded w-fit">🎯 Target &lt;50%</p></div>
                     </div>
                 </div>
             </div>
-
-            <!-- 2. SMART TIPS TAB -->
             <div id="planner-tips" class="hidden space-y-4 animate-fade pb-10 text-[var(--text-main)]"></div>
-
-            <!-- 3. ROADMAP TAB -->
-            <div id="planner-roadmap" class="hidden animate-fade pb-10 mt-4">
-                <div id="roadmap-container" class="relative ml-4 border-l-2 border-[var(--border-color)] space-y-10 pb-4 text-[var(--text-main)]"></div>
-            </div>
+            <div id="planner-roadmap" class="hidden animate-fade pb-10 mt-4"><div id="roadmap-container" class="relative ml-4 border-l-2 border-[var(--border-color)] space-y-10 pb-4 text-[var(--text-main)]"></div></div>
         </div>
 
         <!-- VIEW: BUDGET -->
@@ -684,27 +557,17 @@
                      <span class="text-xs font-bold bg-[var(--bg-card)] text-[var(--primary)] px-3 py-1.5 rounded-full uppercase tracking-wider">On Track</span>
                  </div>
                  <div class="mb-3 flex justify-between text-xs font-bold uppercase tracking-wide text-[var(--text-main)]"><span>Terpakai</span><span>Total Limit</span></div>
-                 <div class="flex justify-between text-lg font-black mb-4 text-[var(--text-main)]">
-                     <span id="budget-used">Rp 0</span><span class="opacity-50">/</span><span id="budget-total">Rp 0</span>
-                 </div>
+                 <div class="flex justify-between text-lg font-black mb-4 text-[var(--text-main)]"><span id="budget-used">Rp 0</span><span class="opacity-50">/</span><span id="budget-total">Rp 0</span></div>
                  <div class="w-full bg-[var(--border-glass)] rounded-full h-4 mb-3"><div id="budget-bar-main" class="bg-[var(--primary)] h-4 rounded-full w-0 transition-all duration-700"></div></div>
                  <p id="budget-pct" class="text-right text-xs font-black text-[var(--text-main)]">0% Digunakan</p>
              </div>
              <button onclick="generateAIBudget()" class="w-full py-5 bg-[var(--primary)] text-[var(--text-on-gradient)] rounded-2xl font-bold flex items-center justify-center gap-3 shadow-lg active:scale-95 transition-transform text-base"><span>✨</span> Buat Budget Cerdas AI</button>
-             
              <div class="glass-card p-6">
-                 <div class="flex justify-between items-center mb-4">
-                     <h3 class="font-bold text-base text-[var(--text-main)]">Tagihan Rutin</h3>
-                     <button onclick="openRecurringModal()" class="text-xs font-bold text-[var(--primary)] bg-primary-alpha px-3 py-1.5 rounded-full">+ Tambah</button>
-                 </div>
+                 <div class="flex justify-between items-center mb-4"><h3 class="font-bold text-base text-[var(--text-main)]">Tagihan Rutin</h3><button onclick="openRecurringModal()" class="text-xs font-bold text-[var(--primary)] bg-primary-alpha px-3 py-1.5 rounded-full">+ Tambah</button></div>
                  <div id="recurring-list" class="space-y-3"></div>
              </div>
-             
              <div>
-                 <div class="flex justify-between items-center mb-4">
-                     <h3 class="font-bold text-base text-[var(--text-main)]">Kategori Budget</h3>
-                     <button onclick="toggleModal('budget-modal', true)" class="text-xs font-bold text-[var(--primary)]">+ Tambah</button>
-                 </div>
+                 <div class="flex justify-between items-center mb-4"><h3 class="font-bold text-base text-[var(--text-main)]">Kategori Budget</h3><button onclick="toggleModal('budget-modal', true)" class="text-xs font-bold text-[var(--primary)]">+ Tambah</button></div>
                  <div id="budget-list" class="space-y-3"></div>
              </div>
              <div><h3 class="font-bold text-base mb-4 text-[var(--text-main)]">Pengeluaran Tanpa Budget</h3><div id="unbudgeted-list" class="space-y-3"></div></div>
@@ -715,19 +578,11 @@
             <div class="glass-card p-8 border-none" style="background: var(--gradient-main); color: var(--text-on-gradient);">
                 <p class="text-xs font-bold uppercase opacity-90 mb-2 tracking-widest">Net Worth</p>
                 <h2 id="asset-net-worth" class="text-4xl font-black mb-6">Rp 0</h2>
-                <div class="flex gap-2 text-xs font-bold">
-                    <span class="px-3 py-1.5 bg-[var(--bg-card)] text-[var(--text-main)] rounded-full shadow-sm">Total Aset: <span id="asset-count">0</span></span>
-                </div>
+                <div class="flex gap-2 text-xs font-bold"><span class="px-3 py-1.5 bg-[var(--bg-card)] text-[var(--text-main)] rounded-full shadow-sm">Total Aset: <span id="asset-count">0</span></span></div>
             </div>
+            <div><h3 class="font-bold text-base mb-4 text-[var(--text-main)]">Komposisi Aset</h3><div id="asset-composition" class="space-y-4 text-[var(--text-main)]"></div></div>
             <div>
-                <h3 class="font-bold text-base mb-4 text-[var(--text-main)]">Komposisi Aset</h3>
-                <div id="asset-composition" class="space-y-4 text-[var(--text-main)]"></div>
-            </div>
-            <div>
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="font-bold text-base text-[var(--text-main)]">Daftar Aset</h3>
-                    <button onclick="toggleModal('asset-modal', true)" class="text-xs font-bold text-[var(--primary)]">+ Tambah</button>
-                </div>
+                <div class="flex justify-between items-center mb-4"><h3 class="font-bold text-base text-[var(--text-main)]">Daftar Aset</h3><button onclick="toggleModal('asset-modal', true)" class="text-xs font-bold text-[var(--primary)]">+ Tambah</button></div>
                 <div id="asset-list" class="space-y-3 pb-24 text-[var(--text-main)]"></div>
             </div>
         </div>
@@ -747,7 +602,6 @@
         
         <!-- VIEW: SETTINGS -->
         <div id="view-settings" class="hidden space-y-6 pb-24">
-             <!-- Avatar Section -->
              <div class="glass-card p-8 flex flex-col items-center relative">
                  <div class="relative mb-6 cursor-pointer group" onclick="changeAvatar()">
                      <img id="settings-avatar" src="https://ui-avatars.com/api/?name=User&background=random" class="profile-avatar w-28 h-28 border-4 border-[var(--bg-body)] shadow-2xl rounded-full object-cover">
@@ -758,7 +612,6 @@
                  <input type="file" id="avatar-input" class="hidden" accept="image/*" onchange="previewAvatar(this)">
              </div>
              
-             <!-- Akun Section -->
              <div>
                  <h3 class="text-xs font-bold uppercase text-[var(--text-muted)] mb-4 px-2 tracking-widest">Akun</h3>
                  <div class="glass-card p-6 space-y-5">
@@ -767,7 +620,6 @@
                  </div>
              </div>
              
-             <!-- Database & Cloud Section (Khusus Sinkronisasi Data Pribadi User) -->
              <div>
                  <h3 class="text-xs font-bold uppercase text-[var(--text-muted)] mb-4 px-2 tracking-widest">Database Personal (Cloud)</h3>
                  <div class="glass-card p-4 flex items-center justify-between cursor-pointer hover:opacity-80 active:scale-95 transition-all border border-[var(--border-color)]" onclick="toggleModal('gsheet-modal', true)">
@@ -782,7 +634,6 @@
                  </div>
              </div>
              
-             <!-- Tema & Tampilan Section -->
              <div>
                  <h3 class="text-xs font-bold uppercase text-[var(--text-muted)] mb-4 px-2 tracking-widest">Tema & Tampilan</h3>
                  <div class="glass-card p-6 space-y-4">
@@ -805,44 +656,31 @@
   </main>
 
   <!-- MODALS -->
-  <!-- NEW MODAL: PILIH METODE TRANSAKSI -->
   <div id="add-method-modal" class="modal-overlay">
       <div class="modal-sheet">
           <div class="flex justify-between items-center mb-6 border-b border-[var(--border-color)] pb-4">
               <h2 class="text-xl font-black font-heading text-[var(--text-main)]">Pilih Metode</h2>
               <button onclick="toggleModal('add-method-modal', false)" class="p-2 bg-[var(--input-bg)] rounded-full font-bold text-[var(--text-muted)] hover:text-[var(--text-negative)] transition-colors w-10 h-10 flex items-center justify-center">✕</button>
           </div>
-          
           <div class="space-y-4">
               <div class="glass-card p-4 flex items-center justify-between cursor-pointer hover:opacity-80 active:scale-95 transition-all border border-[var(--border-color)]" onclick="toggleModal('add-method-modal', false); toggleModal('add-tx-modal', true); prepareAddTxNew();">
                   <div class="flex items-center gap-4">
                       <div class="w-12 h-12 rounded-2xl bg-primary-alpha text-[var(--primary)] flex items-center justify-center text-2xl shadow-sm">📝</div>
-                      <div>
-                          <p class="text-sm font-bold text-[var(--text-main)]">Input Manual</p>
-                          <p class="text-[11px] font-bold text-[var(--text-muted)] opacity-80 mt-0.5">Ketik detail transaksi secara lengkap</p>
-                      </div>
+                      <div><p class="text-sm font-bold text-[var(--text-main)]">Input Manual</p><p class="text-[11px] font-bold text-[var(--text-muted)] opacity-80 mt-0.5">Ketik detail transaksi secara lengkap</p></div>
                   </div>
                   <span class="text-xl text-[var(--text-muted)]">›</span>
               </div>
-              
               <div class="glass-card p-4 flex items-center justify-between cursor-pointer hover:opacity-80 active:scale-95 transition-all border border-[var(--border-color)]" onclick="toggleModal('add-method-modal', false); openReceiptScanner();">
                   <div class="flex items-center gap-4">
                       <div class="w-12 h-12 rounded-2xl bg-positive-alpha text-[var(--text-positive)] flex items-center justify-center text-2xl shadow-sm">🧾</div>
-                      <div>
-                          <p class="text-sm font-bold text-[var(--text-main)]">Scan Struk <span class="bg-[var(--text-positive)] text-[var(--bg-card)] px-1.5 py-0.5 rounded text-[9px] ml-1">AI</span></p>
-                          <p class="text-[11px] font-bold text-[var(--text-muted)] opacity-80 mt-0.5">Auto-catat massal dari teks struk belanja</p>
-                      </div>
+                      <div><p class="text-sm font-bold text-[var(--text-main)]">Scan Struk <span class="bg-[var(--text-positive)] text-[var(--bg-card)] px-1.5 py-0.5 rounded text-[9px] ml-1">AI</span></p><p class="text-[11px] font-bold text-[var(--text-muted)] opacity-80 mt-0.5">Auto-catat massal dari teks struk belanja</p></div>
                   </div>
                   <span class="text-xl text-[var(--text-muted)]">›</span>
               </div>
-
               <div class="glass-card p-4 flex items-center justify-between cursor-pointer hover:opacity-80 active:scale-95 transition-all border border-[var(--border-color)]" onclick="toggleModal('add-method-modal', false); startVoiceRecognition();">
                   <div class="flex items-center gap-4">
                       <div class="w-12 h-12 rounded-2xl bg-negative-alpha text-[var(--text-negative)] flex items-center justify-center text-2xl shadow-sm">🎤</div>
-                      <div>
-                          <p class="text-sm font-bold text-[var(--text-main)]">Rekam Suara <span class="bg-[var(--text-negative)] text-[var(--bg-card)] px-1.5 py-0.5 rounded text-[9px] ml-1">AI</span></p>
-                          <p class="text-[11px] font-bold text-[var(--text-muted)] opacity-80 mt-0.5">Catat instan pakai perintah suara lisan</p>
-                      </div>
+                      <div><p class="text-sm font-bold text-[var(--text-main)]">Rekam Suara <span class="bg-[var(--text-negative)] text-[var(--bg-card)] px-1.5 py-0.5 rounded text-[9px] ml-1">AI</span></p><p class="text-[11px] font-bold text-[var(--text-muted)] opacity-80 mt-0.5">Catat instan pakai perintah suara lisan</p></div>
                   </div>
                   <span class="text-xl text-[var(--text-muted)]">›</span>
               </div>
@@ -850,14 +688,12 @@
       </div>
   </div>
 
-  <!-- MODAL: ADD TRANSACTION (DIPERBARUI MENJADI BOTTOM SHEET MODAL) -->
   <div id="add-tx-modal" class="modal-overlay z-[2500]">
       <div class="modal-sheet">
           <div class="flex justify-between items-center mb-6">
               <h2 class="text-xl font-black font-heading text-[var(--text-main)]">Catat Transaksi</h2>
               <button onclick="toggleModal('add-tx-modal', false)" class="p-2 bg-[var(--input-bg)] rounded-full font-bold text-[var(--text-muted)] hover:text-[var(--text-negative)] transition-colors w-10 h-10 flex items-center justify-center">✕</button>
           </div>
-          
           <div class="space-y-4 mb-6">
               <div class="glass-card p-2 flex gap-2 overflow-x-auto no-scrollbar">
                   <div onclick="setTxTypeNew('income')" id="pill-income" class="tx-type-pill shrink-0 whitespace-nowrap">Pemasukan</div>
@@ -865,8 +701,6 @@
                   <div onclick="setTxTypeNew('saving')" id="pill-saving" class="tx-type-pill shrink-0 whitespace-nowrap">Tabungan</div>
                   <div onclick="setTxTypeNew('investment')" id="pill-investment" class="tx-type-pill shrink-0 whitespace-nowrap">Investasi</div>
               </div>
-
-              <!-- PENYESUAIAN FLEXBOX AGAR ANGKA TIDAK TERPOTONG -->
               <div class="glass-card p-6 flex flex-col items-center justify-center text-center relative overflow-hidden bg-primary-alpha">
                   <p class="text-xs font-bold uppercase tracking-widest text-[var(--primary)] mb-2">Nominal Transaksi</p>
                   <div class="flex items-center justify-center gap-2 w-full px-4 max-w-full">
@@ -874,7 +708,6 @@
                       <input type="text" id="tx-amount-new" class="bg-transparent border-none text-4xl sm:text-5xl font-black font-heading text-[var(--text-main)] outline-none w-full text-left min-w-0" placeholder="0" oninput="formatInputRibuan(this)">
                   </div>
               </div>
-
               <div class="glass-card p-5">
                    <div class="flex justify-between items-center mb-4">
                        <h3 class="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)]">Pilih Kategori</h3>
@@ -882,7 +715,6 @@
                    </div>
                    <div id="cat-grid-container" class="grid grid-cols-4 gap-3 max-h-40 overflow-y-auto no-scrollbar pb-2"></div>
               </div>
-
               <div class="glass-card p-5 space-y-4">
                   <div>
                       <label class="text-[11px] font-bold uppercase tracking-widest text-[var(--text-muted)] block mb-2">Tanggal</label>
@@ -899,7 +731,6 @@
                   </div>
               </div>
           </div>
-
           <button onclick="saveTxNew()" class="w-full py-4 bg-[var(--primary)] text-[var(--text-on-gradient)] rounded-2xl font-bold shadow-[0_4px_20px_rgba(168,85,247,0.3)] active:scale-95 transition-transform mb-3">Simpan Transaksi</button>
           <button onclick="toggleModal('add-tx-modal', false)" class="w-full py-4 bg-[var(--input-bg)] text-[var(--text-main)] rounded-2xl font-bold hover:opacity-80 transition-opacity">Batal</button>
       </div>
@@ -942,30 +773,22 @@
               <h2 class="text-xl font-black font-heading text-[var(--text-main)]">Integrasi Cloud Personal</h2>
               <button onclick="toggleModal('gsheet-modal', false)" class="p-2 bg-[var(--input-bg)] rounded-full font-bold text-[var(--text-muted)] hover:text-[var(--text-negative)] transition-colors w-10 h-10 flex items-center justify-center">✕</button>
           </div>
-          
           <div class="space-y-6">
-              <!-- Status Koneksi -->
               <div class="flex justify-between items-center bg-[var(--input-bg)] p-4 rounded-2xl border border-[var(--border-glass)]">
                   <span class="text-sm font-bold text-[var(--text-muted)]">Status Koneksi</span>
                   <div id="gsheet-status-indicator" class="flex items-center gap-2 text-sm font-bold">
                       <span class="text-lg">❌</span> <span class="text-[var(--text-negative)]">Tidak Terhubung</span>
                   </div>
               </div>
-
-              <!-- Field URL -->
               <div class="space-y-2">
                   <label class="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)] ml-1">URL Tersimpan (Apps Script User)</label>
                   <input type="text" id="gsheet-url-display" class="input-field text-sm opacity-60 cursor-not-allowed bg-[var(--input-bg)]" readonly placeholder="https://script.google.com/macros/s/...">
               </div>
-              
-              <!-- Tombol Aksi -->
               <div class="flex flex-col gap-3">
                    <button id="btn-edit-url" onclick="toggleEditUrl()" class="w-full py-4 bg-[var(--input-bg)] text-[var(--text-main)] border border-[var(--border-color)] rounded-2xl font-bold text-sm hover:brightness-95 transition-all">Edit URL Cloud</button>
                    <button onclick="syncToGsheet()" class="w-full py-4 bg-[var(--text-positive)] text-white rounded-2xl font-bold text-sm shadow-lg active:scale-95 transition-transform">Sinkronkan ke Cloud Personal</button>
                    <button onclick="loadFromGsheet()" class="w-full py-4 bg-[var(--primary)] text-[var(--text-on-gradient)] rounded-2xl font-bold text-sm shadow-lg active:scale-95 transition-transform">Muat Data dari Cloud</button>
               </div>
-
-              <!-- Info -->
               <div class="bg-[var(--input-bg)] p-5 rounded-2xl border border-[var(--border-glass)]">
                   <h4 class="text-xs font-bold text-[var(--text-main)] uppercase tracking-widest mb-3">Catatan Penting:</h4>
                   <ul class="text-xs text-[var(--text-muted)] space-y-2 list-disc pl-4 marker:text-[var(--primary)]">
@@ -974,7 +797,6 @@
                       <li><b>Auto-Sync:</b> Jika URL sudah tersimpan, aplikasi akan otomatis mem-backup data ke Cloud Anda tiap kali ada transaksi baru di latar belakang.</li>
                   </ul>
               </div>
-
               <details class="group bg-[var(--input-bg)] rounded-2xl border border-[var(--border-glass)] overflow-hidden">
                   <summary class="p-4 font-bold text-sm text-[var(--text-main)] cursor-pointer list-none flex items-center gap-3 select-none">
                       <span class="transition-transform group-open:rotate-90 text-[var(--primary)] text-base">▶</span>
@@ -1087,7 +909,6 @@
                   <h3 class="text-xs font-bold text-[var(--text-muted)] mb-3 uppercase tracking-widest ml-1">Wawasan Cerdas</h3>
                   <div id="report-insights" class="grid grid-cols-2 gap-3 text-[var(--text-main)]"></div>
               </div>
-
               <div>
                   <h3 class="text-xs font-bold text-[var(--text-muted)] mb-3 uppercase tracking-widest ml-1">Kesehatan Finansial</h3>
                   <div class="glass-card p-6 text-center border border-[var(--border-color)] text-[var(--text-main)]">
@@ -1110,13 +931,11 @@
                       </div>
                   </div>
               </div>
-
               <div>
                   <h3 class="text-xs font-bold text-[var(--text-muted)] mb-3 uppercase tracking-widest ml-1">Performa Anggaran</h3>
                   <div id="report-budget-list" class="space-y-4 text-[var(--text-main)]"></div>
               </div>
           </div>
-
           <button onclick="toggleModal('report-modal', false)" class="mt-8 w-full py-4 bg-[var(--input-bg)] text-[var(--text-main)] rounded-2xl font-bold hover:opacity-80 active:scale-95 transition-all">Tutup Laporan</button>
       </div>
   </div>
@@ -1181,21 +1000,23 @@
 
 <script>
     /* =====================================================================
-       KUNCI API ADMIN: Masukkan URL Web App Google Apps Script Anda (admin_backend.gs) 
-       di bawah ini untuk mengaktifkan validasi Login & Register di Cloud.
-       Jika kosong, aplikasi akan menggunakan LocalStorage (Offline Mode).
+       KUNCI API ADMIN & KONFIGURASI APLIKASI
        ===================================================================== */
-    const ADMIN_API_URL = "https://script.google.com/macros/s/AKfycbxu2wVWYNxkIemI8mBwCYi3d6x_Ao8spQF6tR0Dn7l1BP_qPWyus5frvwhvPH2WZrMUGw/exec"; 
+    const APP_CONFIG = {
+        gasUrl: 'https://script.google.com/macros/s/AKfycbyKH_2IE4i6DD1WzMQs8Yq-r7tipOpN2XoMuw5llCTwMSh8tqcAJNqPmSzCLyA-vqfnsw/exec'
+    };
+    const ADMIN_API_URL = APP_CONFIG.gasUrl; 
 
     /* --- DATA STORE & STATE --- */
     const DB_KEY = 'finz_data_ultimate_v3'; 
-    let cloudUrl = localStorage.getItem('finz_cloud_url') || '';
+    let data = JSON.parse(localStorage.getItem(DB_KEY)) || getCleanState();
+    let cloudUrl = data.settings?.gsheet_url || '';
     
     function getCleanState() {
         return {
             "user": null,
             "registered_users": [],
-            "settings": { "theme": "neon", "isDarkMode": true },
+            "settings": { "theme": "neon", "isDarkMode": true, "gsheet_url": "" },
             "wallets": [],
             "assets": [],
             "goals": [],
@@ -1206,8 +1027,6 @@
         };
     }
 
-    let data = JSON.parse(localStorage.getItem(DB_KEY)) || getCleanState();
-    
     let currentTxType = 'expense';
     let selectedCat = '';
     let selectedPay = 'Cash';
@@ -1221,6 +1040,44 @@
     let loginFailedAttempts = 0;
     let expenseChartInstance = null;
     let autoSyncTimeout = null;
+
+    // --- FUNGSI INTI --- (DI-HOIST KE ATAS AGAR TIDAK REFERENCE ERROR)
+    function getFilteredTxs() {
+        const now = new Date();
+        if(filterPeriod === 'custom' && rangeStart && rangeEnd) {
+            return data.tx.filter(t => { 
+                const d = new Date(t.date); 
+                const start = new Date(rangeStart); start.setHours(0,0,0,0); 
+                const end = new Date(rangeEnd); end.setHours(23,59,59,999); 
+                return d >= start && d <= end; 
+            });
+        }
+        if(filterPeriod === 'all') return data.tx;
+        return data.tx.filter(t => {
+            const d = new Date(t.date);
+            if(filterPeriod === 'today') return d.toDateString() === now.toDateString();
+            if(filterPeriod === 'yesterday') { 
+                const y = new Date(now); y.setDate(y.getDate()-1); 
+                return d.toDateString() === y.toDateString(); 
+            }
+            if(filterPeriod === 'this_month') return d.getMonth() === now.getMonth() && d.getFullYear() === now.getFullYear();
+            if(filterPeriod === 'last_month') { 
+                const last = new Date(now.getFullYear(), now.getMonth()-1, 1); 
+                return d.getMonth() === last.getMonth() && d.getFullYear() === last.getFullYear(); 
+            }
+            if(filterPeriod === 'this_year') return d.getFullYear() === now.getFullYear();
+            return true;
+        });
+    }
+
+    function generateTxHash(t) {
+        if (t.id && String(t.id).length > 5) return String(t.id); // Validasi absolut
+        const safeDesc = (t.desc || t.cat || '').trim().toLowerCase();
+        const safeCat = (t.cat || '').trim().toLowerCase();
+        const safeDate = (t.date || '').trim().split('T')[0];
+        const safeType = (t.type || '').trim().toLowerCase();
+        return `${safeDate}_${safeType}_${t.amount}_${safeCat}_${safeDesc}`;
+    }
     
     const BASE_CATS = {
         income: [{n:'Gaji', i:'💼'}, {n:'Bonus', i:'🎁'}, {n:'Hadiah', i:'🧧'}, {n:'Lainnya', i:'✨'}],
@@ -1328,23 +1185,30 @@
         };
     }
 
-    function switchUserLocalState(email, userName) {
+    function switchUserLocalState(email, userName, userGsheetUrl = null) {
         const globalUsers = data.registered_users || [];
-        const globalSettings = data.settings || { "theme": "neon", "isDarkMode": true };
         
         if (email.toLowerCase() === 'demo@finz.com') {
             data = getRichDemoData();
+            cloudUrl = data.settings.gsheet_url || '';
         } else {
             const userCache = localStorage.getItem('finz_user_' + email.toLowerCase());
             if (userCache) {
                 data = JSON.parse(userCache);
+                if (userGsheetUrl !== null) {
+                    data.settings.gsheet_url = userGsheetUrl;
+                }
+                cloudUrl = data.settings.gsheet_url || '';
             } else {
                 data = getCleanState();
+                if (userGsheetUrl !== null) {
+                    data.settings.gsheet_url = userGsheetUrl;
+                }
+                cloudUrl = data.settings.gsheet_url || '';
             }
         }
         
         data.registered_users = globalUsers;
-        data.settings = globalSettings;
         
         data.user = { 
             name: userName, 
@@ -1369,9 +1233,15 @@
                 if(descInput) descInput.addEventListener('input', (e) => autoCategorize(e.target.value));
             }
             checkRecurringBills();
-            switchView('home');
             
-            // Auto Pull Data dari Cloud Personal secara diam-diam (Silent Sync)
+            // Perbaikan: Hapus duplikasi transaksi di local storage (akibat bug sebelumnya)
+            if (data.tx) {
+                const uniqueMap = new Map();
+                data.tx.forEach(t => uniqueMap.set(generateTxHash(t), t));
+                data.tx = Array.from(uniqueMap.values());
+            }
+
+            switchView('home');
             autoLoadFromCloud();
         } else {
             document.getElementById('main-app').classList.add('hidden');
@@ -1380,15 +1250,8 @@
     }
 
     function setSmartGreeting() {
-        const hour = new Date().getHours();
-        const day = new Date().getDay(); 
-        let greeting = "Welcome Back! 👋";
-        if (hour >= 5 && hour < 11) greeting = "Pagi Bestie! ☀️";
-        else if (hour >= 11 && hour < 15) greeting = "Siang Bolong! 🌤️";
-        else if (hour >= 15 && hour < 18) greeting = "Sore Chill! 🌇";
-        else { if (day === 6) greeting = "Malem Mingguan? 🌙"; else greeting = "Malem Vibes! 🌙"; }
         const greetEl = document.getElementById('auth-greeting');
-        if(greetEl) greetEl.innerText = greeting;
+        if(greetEl) greetEl.innerText = "Welcome Back! 👋";
     }
 
     function initPWA() {
@@ -1413,7 +1276,7 @@
             registerForm.classList.add('hidden');
             btnLogin.className = 'flex-1 pb-3 text-sm font-bold border-b-2 border-purple-500 text-purple-400 transition-all';
             btnRegister.className = 'flex-1 pb-3 text-sm font-bold border-b-2 border-transparent text-gray-500 hover:text-gray-300 transition-all';
-            setSmartGreeting();
+            greeting.innerText = 'Welcome Back! 👋';
         } else {
             loginForm.classList.add('hidden');
             registerForm.classList.remove('hidden');
@@ -1428,11 +1291,9 @@
         const svg = btnEl.querySelector('svg');
         if (input.type === 'password') {
             input.type = 'text';
-            // Ubah menjadi ikon mata tertutup
             svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"></path>';
         } else {
             input.type = 'password';
-            // Ubah menjadi ikon mata terbuka
             svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>';
         }
     }
@@ -1452,7 +1313,6 @@
         const btn = document.getElementById('btn-register');
         btn.innerHTML = 'Memproses...'; btn.classList.add('opacity-50');
 
-        // CLOUD REGISTRATION (Admin Database)
         if (ADMIN_API_URL && ADMIN_API_URL.startsWith("http")) {
             try {
                 const response = await fetch(ADMIN_API_URL, {
@@ -1472,15 +1332,13 @@
                 btn.innerHTML = 'Daftar Sekarang'; btn.classList.remove('opacity-50');
                 return Swal.fire({ title: 'Cloud Error!', text: 'Gagal menghubungi server Admin. Pastikan URL benar atau internet lancar.', icon: 'error', ...swalErrorConfig });
             }
-        } 
-        // LOCAL REGISTRATION (Offline Mode)
-        else {
+        } else {
             if(!data.registered_users) data.registered_users = [];
             if(data.registered_users.some(u => u.email === email)) {
                 btn.innerHTML = 'Daftar Sekarang'; btn.classList.remove('opacity-50');
                 return Swal.fire({ title: 'Pendaftaran Gagal!', text: 'Email ini sudah terdaftar di perangkat ini!', icon: 'error', ...swalErrorConfig });
             }
-            data.registered_users.push({ name: name, email: email, password: pass });
+            data.registered_users.push({ name: name, email: email, password: pass, gsheet_url: '' });
             saveData();
             setTimeout(() => { handleRegisterSuccess(name, email, pass, btn, swalDarkConfig); }, 800);
         }
@@ -1510,8 +1368,6 @@
         
         btn.innerHTML = 'Loading...'; btn.classList.add('opacity-50');
 
-        // --- SILENT BYPASS UNTUK AKUN DEMO ---
-        // Akun ini tidak akan mengecek Google Sheets Admin agar selalu berfungsi kapan pun dibutuhkan
         if (e.toLowerCase() === 'demo@finz.com' && p === 'demo123') {
             setTimeout(() => {
                 switchUserLocalState(e, "Admin Demo");
@@ -1522,7 +1378,6 @@
             return;
         }
 
-        // CLOUD LOGIN (Admin Database)
         if (ADMIN_API_URL && ADMIN_API_URL.startsWith("http")) {
             try {
                 const response = await fetch(ADMIN_API_URL, {
@@ -1533,7 +1388,7 @@
                 const resData = await response.json();
                 
                 if (resData.status === 'success') {
-                    switchUserLocalState(e, resData.name);
+                    switchUserLocalState(e, resData.name, resData.gsheet_url);
                     btn.innerHTML = 'Masuk'; btn.classList.remove('opacity-50');
                     saveData();
                     Swal.fire({ title: 'Berhasil Masuk! 🔥', text: 'Verifikasi akun dari server berhasil.', icon: 'success', showConfirmButton: false, timer: 1500, ...swalDarkConfig }).then(() => init());
@@ -1544,15 +1399,13 @@
                 btn.innerHTML = 'Masuk'; btn.classList.remove('opacity-50');
                 return Swal.fire({ title: 'Cloud Error!', text: 'Gagal menghubungi server Admin.', icon: 'error', ...swalErrorConfig });
             }
-        } 
-        // LOCAL LOGIN (Offline Mode)
-        else {
+        } else {
             setTimeout(() => {
                 if(!data.registered_users) data.registered_users = [];
                 const validUser = data.registered_users.find(u => u.email === e && u.password === p);
 
                 if(validUser) {
-                    switchUserLocalState(e, validUser.name);
+                    switchUserLocalState(e, validUser.name, validUser.gsheet_url);
                     btn.innerHTML = 'Masuk'; btn.classList.remove('opacity-50');
                     saveData(); 
                     Swal.fire({ title: 'Berhasil Masuk! 🔥', text: 'Welcome back ke dashboard!', icon: 'success', showConfirmButton: false, timer: 1500, ...swalDarkConfig }).then(() => init());
@@ -1577,64 +1430,69 @@
     }
     
     function handleLogout() { 
-        if (data.user) {
-            localStorage.setItem('finz_user_' + data.user.email.toLowerCase(), JSON.stringify(data));
-        }
+        Swal.fire({
+            title: 'Keluar...',
+            text: 'Menyimpan data sesi Anda',
+            allowOutsideClick: false,
+            didOpen: () => {
+                Swal.showLoading();
+            }
+        });
 
-        const globalUsers = data.registered_users || [];
-        const globalSettings = data.settings || { "theme": "neon", "isDarkMode": true };
+        setTimeout(() => {
+            if (data.user) {
+                localStorage.setItem('finz_user_' + data.user.email.toLowerCase(), JSON.stringify(data));
+            }
 
-        data = getCleanState();
-        data.registered_users = globalUsers;
-        data.settings = globalSettings;
-        
-        saveData(); 
-        
-        // Menyembunyikan UI utama dan memunculkan Modal Login secara instan (SPA style)
-        document.getElementById('main-app').classList.add('hidden');
-        document.getElementById('auth-section').classList.remove('hidden');
-        
-        // Memastikan sidebar dan overlay tertutup dengan rapi
-        document.getElementById('sidebar').classList.remove('active');
-        document.getElementById('sidebar-overlay').classList.remove('active');
-        
-        // Membersihkan isian form login sebelumnya
-        document.getElementById('login-email').value = '';
-        document.getElementById('login-password').value = '';
-        
-        // Memastikan state tab kembali ke halaman login utama
-        switchAuthTab('login');
+            const globalUsers = data.registered_users || [];
+            const globalSettings = { "theme": data.settings.theme, "isDarkMode": data.settings.isDarkMode, "gsheet_url": "" };
+
+            data = getCleanState();
+            data.registered_users = globalUsers;
+            data.settings = globalSettings;
+            cloudUrl = '';
+            
+            saveData(); 
+            
+            window.location.reload();
+        }, 800);
     }
 
     // --- MANAJEMEN DATA & DYNAMIC CLOUD SYNC TRANSACTIONS ---
     
-    // Fungsi Mapper: App (Data Lokal) -> Google Sheets
     function mapTxToSheet(t) {
         let type = t.type === 'income' ? 'Pemasukan' : 'Pengeluaran';
         
         let rule = '';
+        let catLower = (t.cat || '').toLowerCase().trim();
+
         if (t.type !== 'income') {
             rule = 'Keinginan';
             if (t.type === 'saving' || t.type === 'investment') rule = 'Tabungan';
-            else if (['Makan', 'Tagihan', 'Transport', 'Kesehatan'].includes(t.cat)) rule = 'Kebutuhan';
+            else if (['makan', 'tagihan', 'transport', 'kesehatan', 'listrik & air', 'sewa rumah/kosan', 'internet & pulsa', 'bensin/bbm', 'transportasi umum', 'service kendaraan', 'makan siang/harian', 'spp/uang sekolah', 'asuransi kesehatan', 'obat & vitamin'].includes(catLower)) rule = 'Kebutuhan';
         }
 
         let mainCategory = 'Lainnya';
         if(type === 'Pemasukan') {
-            if(['Gaji', 'Bonus', 'Hadiah'].includes(t.cat)) mainCategory = 'Gaji & Pendapatan Tetap';
-            else if(['Dividen', 'Saham', 'Reksadana'].includes(t.cat)) mainCategory = 'Investasi';
-            else mainCategory = 'Usaha & Freelance';
+            if(['gaji', 'gaji pokok', 'bonus', 'tunjangan', 'bonus bulanan/tahunan', 'hadiah', 'hadiah/pemberian'].includes(catLower)) mainCategory = 'Gaji & Pendapatan Tetap';
+            else if(['dividen', 'dividen saham', 'saham', 'reksadana', 'return reksadana'].includes(catLower)) mainCategory = 'Investasi';
+            else if(['freelance', 'pendapatan freelance', 'hasil penjualan bisnis'].includes(catLower)) mainCategory = 'Usaha & Freelance';
+            else if(['hasil sewa properti', 'royalti aset'].includes(catLower)) mainCategory = 'Passive Income';
+            else mainCategory = 'Pendapatan Lainnya';
         } else {
-            if(['Makan', 'Kopi'].includes(t.cat)) mainCategory = 'Makanan & Minuman';
-            else if(['Transport'].includes(t.cat)) mainCategory = 'Transportasi';
-            else if(['Belanja'].includes(t.cat)) mainCategory = 'Kebutuhan Rumah Tangga';
-            else if(['Tagihan'].includes(t.cat)) mainCategory = 'Tagihan & Kewajiban';
-            else if(['Hiburan', 'Game'].includes(t.cat)) mainCategory = 'Hiburan & Lifestyle';
-            else if(['Kesehatan'].includes(t.cat)) mainCategory = 'Kesehatan';
-            else if(['Tabungan', 'Dana Darurat'].includes(t.cat)) mainCategory = 'Investasi & Tabungan';
+            if(['makan', 'kopi', 'makan siang/harian', 'makan di luar/cafe', 'kopi & jajanan'].includes(catLower)) mainCategory = 'Makanan & Minuman';
+            else if(['transport', 'bensin/bbm', 'transportasi umum', 'service kendaraan', 'kendaraan'].includes(catLower)) mainCategory = 'Transportasi';
+            else if(['belanja', 'belanja bulanan', 'listrik & air', 'sewa rumah/kosan', 'internet & pulsa'].includes(catLower)) mainCategory = 'Kebutuhan Rumah Tangga';
+            else if(['tagihan'].includes(catLower)) mainCategory = 'Tagihan & Kewajiban';
+            else if(['hiburan', 'game', 'nonton bioskop', 'langganan streaming', 'belanja pakaian', 'skincare & makeup', 'game & hobi'].includes(catLower)) mainCategory = 'Hiburan & Lifestyle';
+            else if(['kesehatan', 'asuransi kesehatan', 'obat & vitamin'].includes(catLower)) mainCategory = 'Kesehatan';
+            else if(['tabungan', 'dana darurat', 'tabungan rutin', 'investasi saham/kripto'].includes(catLower)) mainCategory = 'Investasi & Tabungan';
+            else if(['buku & kursus', 'spp/uang sekolah'].includes(catLower)) mainCategory = 'Pendidikan';
+            else if(['sedekah & donasi'].includes(catLower)) mainCategory = 'Sosial & Amal';
         }
 
         return {
+            'ID Transaksi': t.id,
             '📅 Tanggal': t.date,
             '📝 Deskripsi': t.desc || t.cat,
             '🔄 Tipe Transaksi': type,
@@ -1645,7 +1503,6 @@
         };
     }
 
-    // Fungsi Mapper: Google Sheets -> App (Data Lokal)
     function mapSheetToTx(s) {
         let typeStr = (s['🔄 Tipe Transaksi'] || s['Tipe Transaksi'] || '').toLowerCase();
         let type = typeStr === 'pemasukan' || typeStr === 'income' ? 'income' : 'expense';
@@ -1656,11 +1513,23 @@
         let dateStr = new Date().toISOString().split('T')[0];
         let sheetDate = s['📅 Tanggal'] || s['Tanggal'];
         if (sheetDate) {
-            try { dateStr = new Date(sheetDate).toISOString().split('T')[0]; } catch(e){}
+            try { 
+                const d = new Date(sheetDate);
+                if (!isNaN(d)) {
+                    const yyyy = d.getFullYear();
+                    const mm = String(d.getMonth() + 1).padStart(2, '0');
+                    const dd = String(d.getDate()).padStart(2, '0');
+                    dateStr = `${yyyy}-${mm}-${dd}`;
+                } else {
+                    dateStr = String(sheetDate).split('T')[0];
+                }
+            } catch(e){
+                dateStr = String(sheetDate).split('T')[0];
+            }
         }
 
         return {
-            id: Date.now() + Math.random(),
+            id: s['ID Transaksi'] || Date.now() + Math.random(),
             type: type,
             amount: parseInt(s['💰 Jumlah'] || s['Jumlah']) || 0,
             cat: s['🏷️ Sub Kategori'] || s['Sub Kategori'] || s['📂 Kategori'] || s['Kategori'] || 'Lainnya',
@@ -1729,12 +1598,11 @@
             localStorage.setItem('finz_user_' + data.user.email.toLowerCase(), JSON.stringify(data));
         }
 
-        // Auto-Sync Background jika URL Cloud ada
-        if (cloudUrl && data.user) {
+        if (cloudUrl && data.user && data.user.email.toLowerCase() !== 'demo@finz.com') {
             clearTimeout(autoSyncTimeout);
             autoSyncTimeout = setTimeout(() => {
                 backgroundSyncToCloud();
-            }, 2000); // Tunggu 2 detik agar tidak spam request
+            }, 2000); 
         }
     }
 
@@ -1742,12 +1610,14 @@
         if (!cloudUrl || !data.tx || data.tx.length === 0) return;
         
         console.log("[SYNC] Memulai Auto-Sync ke Cloud...");
-        const mappedData = data.tx.map(mapTxToSheet);
+        // Auto-sync hanya mengirim 50 data terakhir untuk efisiensi
+        const recentTxs = data.tx.slice(-50);
+        const mappedData = recentTxs.map(mapTxToSheet);
         
         try {
             const resData = await appendData(mappedData);
             if(resData.status === 'success') {
-                console.log(`[SYNC] Berhasil push ${resData.added} transaksi baru ke Cloud.`);
+                console.log(`[SYNC] Berhasil push ke Cloud. (Appended: ${resData.added}, Updated: ${resData.updated})`);
             } else {
                 console.error('[SYNC] Gagal push:', resData.message);
             }
@@ -1756,7 +1626,6 @@
         }
     }
 
-    // --- MANUAL DATA SYNC ---
     async function syncToGsheet() { 
         if(!cloudUrl) return Swal.fire('Error','URL Cloud Personal belum diatur!','error');
         if(!data.tx || data.tx.length === 0) return Swal.fire('Info','Belum ada transaksi untuk disinkronkan.','info');
@@ -1768,7 +1637,9 @@
             console.log("[SYNC] Mengirim data massal ke Cloud...");
             const resData = await appendData(mappedData);
             if(resData.status === 'success') {
-                Swal.fire('Sukses', `Berhasil mem-backup ${resData.added} transaksi baru ke Google Sheets Anda!`, 'success');
+                let msg = `Berhasil mem-backup ${resData.added} transaksi baru.`;
+                if(resData.updated > 0) msg += ` (dan memperbarui ${resData.updated} data lama)`;
+                Swal.fire('Sukses', msg, 'success');
             } else {
                 Swal.fire('Error', resData.message, 'error');
             }
@@ -1792,17 +1663,12 @@
             if(resData.status === 'success') {
                 const cloudTxs = resData.data || [];
                 if (cloudTxs.length > 0) {
-                    // Petakan kembali dari Cloud ke format Aplikasi
                     const mappedCloudTxs = cloudTxs.map(mapSheetToTx);
-                    
-                    // Filter untuk menghindari duplikasi menggunakan hash dari data (karena ID dihapus)
-                    const makeHash = (t) => `${t.date}_${t.type}_${t.amount}_${t.cat}_${t.payment}_${t.desc}`.toLowerCase();
-                    const existingHashes = new Set(data.tx.map(t => makeHash(t)));
+                    const existingHashes = new Set(data.tx.map(t => generateTxHash(t)));
                     
                     let newCount = 0;
-                    
                     mappedCloudTxs.forEach(cloudTx => {
-                        const hash = makeHash(cloudTx);
+                        const hash = generateTxHash(cloudTx);
                         if(!existingHashes.has(hash)) {
                             data.tx.push(cloudTx);
                             existingHashes.add(hash);
@@ -1810,9 +1676,7 @@
                         }
                     });
 
-                    // Hanya simpan dan render ulang jika benar-benar ada data baru
                     if (newCount > 0) {
-                        // Bypass auto-sync agar tidak looping balik
                         localStorage.setItem(DB_KEY, JSON.stringify(data));
                         if(data.user && data.user.email) {
                             localStorage.setItem('finz_user_' + data.user.email.toLowerCase(), JSON.stringify(data));
@@ -1843,7 +1707,8 @@
 
     async function autoLoadFromCloud() {
         if (!cloudUrl || !data.user) return;
-        await loadFromGsheet(true); // Panggil fungsi load dengan mode silent
+        console.log("[SYNC] Auto-fetching data on load...");
+        await loadFromGsheet(true); 
     }
 
     function checkRecurringBills() {
@@ -1861,7 +1726,6 @@
         if (processed) saveData();
     }
 
-    // --- FUNGSI RECURRING (TAGIHAN RUTIN) ---
     function openRecurringModal() {
         document.getElementById('rec-name').value = '';
         document.getElementById('rec-amount').value = '';
@@ -1896,6 +1760,7 @@
         document.getElementById('date-range-modal').classList.toggle('active', show);
         if(show) { renderCalendar(); selectQuickRange(filterPeriod); }
     }
+    
     function renderCalendar() {
         const grid = document.getElementById('cal-grid-body');
         grid.innerHTML = ['M','S','S','R','K','J','S'].map(d=>`<div class="text-[var(--text-muted)] text-xs">${d}</div>`).join('');
@@ -1913,6 +1778,7 @@
             grid.innerHTML += `<div class="${cls}" onclick="pickDate(${d})">${d}</div>`;
         }
     }
+    
     function pickDate(d) {
         const picked = new Date(calDate.getFullYear(), calDate.getMonth(), d);
         if(!rangeStart || (rangeStart && rangeEnd)) { rangeStart = picked; rangeEnd = null; } 
@@ -1941,11 +1807,10 @@
     }
 
     function switchView(view) {
-        ['home','planner','budget','aset','dompet','goals','settings'].forEach(v => {
+        ['home','planner','budget','aset','domdompet','goals','settings'].forEach(v => {
             const el = document.getElementById('view-'+v); if(el) el.classList.add('hidden');
         });
         
-        // Memastikan view-add-tx diabaikan karena sekarang berupa modal pop-up
         if(view === 'add-tx') return;
 
         const active = document.getElementById('view-'+view); 
@@ -2027,7 +1892,7 @@
         if(btn) btn.classList.add('active'); else if(document.getElementById('chip-'+type)) document.getElementById('chip-'+type).classList.add('active');
         renderHome();
     }
-    
+
     function renderHome() {
         let txs = getFilteredTxs();
         const inc = txs.filter(t=>t.type==='income').reduce((a,b)=>a+b.amount,0);
@@ -2084,23 +1949,6 @@
             }).join('');
         }
         renderExpenseChart();
-    }
-    
-    function getFilteredTxs() {
-        const now = new Date();
-        if(filterPeriod === 'custom' && rangeStart && rangeEnd) {
-            return data.tx.filter(t => { const d = new Date(t.date); const start = new Date(rangeStart); start.setHours(0,0,0,0); const end = new Date(rangeEnd); end.setHours(23,59,59,999); return d >= start && d <= end; });
-        }
-        if(filterPeriod === 'all') return data.tx;
-        return data.tx.filter(t => {
-            const d = new Date(t.date);
-            if(filterPeriod === 'today') return d.toDateString() === now.toDateString();
-            if(filterPeriod === 'yesterday') { const y = new Date(now); y.setDate(y.getDate()-1); return d.toDateString() === y.toDateString(); }
-            if(filterPeriod === 'this_month') return d.getMonth() === now.getMonth() && d.getFullYear() === now.getFullYear();
-            if(filterPeriod === 'last_month') { const last = new Date(now.getFullYear(), now.getMonth()-1, 1); return d.getMonth() === last.getMonth() && d.getFullYear() === last.getFullYear(); }
-            if(filterPeriod === 'this_year') return d.getFullYear() === now.getFullYear();
-            return true;
-        });
     }
 
     function openReportModal() {
@@ -2668,7 +2516,21 @@
         if (data.settings.isDarkMode) { document.body.classList.add('dark-mode'); if(btn) btn.innerText = '☀️'; } 
         else { document.body.classList.remove('dark-mode'); if(btn) btn.innerText = '🌙'; }
     }
-    function toggleDarkMode() { data.settings.isDarkMode = !data.settings.isDarkMode; applyDarkMode(); saveData(); renderExpenseChart(); }
+    
+    function toggleDarkMode() { 
+        data.settings.isDarkMode = !data.settings.isDarkMode; 
+        applyDarkMode(); 
+        
+        requestAnimationFrame(() => {
+            setTimeout(() => {
+                saveData(); 
+                if(document.getElementById('view-home') && !document.getElementById('view-home').classList.contains('hidden')) {
+                    renderExpenseChart(); 
+                }
+            }, 10);
+        });
+    }
+    
     function setThemeOption(theme) {
         data.settings.theme = theme;
         document.querySelectorAll('.theme-option').forEach(el => el.classList.remove('active'));
@@ -2697,7 +2559,7 @@
         }
     }
     
-    function toggleEditUrl() {
+    async function toggleEditUrl() {
         const input = document.getElementById('gsheet-url-display'); const btn = document.getElementById('btn-edit-url');
         if (!isEditingUrl) {
             input.removeAttribute('readonly'); input.classList.remove('opacity-60', 'cursor-not-allowed', 'bg-[var(--input-bg)]'); input.classList.add('bg-[var(--bg-card)]', 'border-[var(--primary)]'); input.focus();
@@ -2705,14 +2567,46 @@
             isEditingUrl = true;
         } else {
             const newUrl = input.value.trim();
-            if (newUrl !== undefined) { 
-                cloudUrl = newUrl; 
-                localStorage.setItem('finz_cloud_url', cloudUrl);
-                updateGsheetUI(); 
-                Swal.fire({ title: 'Tersimpan', text: 'URL Cloud berhasil diatur.', icon: 'success' }); 
+            if (newUrl !== undefined && newUrl !== cloudUrl) { 
+                btn.innerHTML = 'Menyimpan...'; btn.classList.add('opacity-50');
+                
+                if (ADMIN_API_URL && ADMIN_API_URL.startsWith("http") && data.user && data.user.email) {
+                    try {
+                        const response = await fetch(ADMIN_API_URL, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                            body: JSON.stringify({ action: 'update_url', email: data.user.email, gsheet_url: newUrl })
+                        });
+                        const resData = await response.json();
+                        if (resData.status === 'success') {
+                            cloudUrl = newUrl;
+                            data.settings.gsheet_url = cloudUrl;
+                            saveData();
+                            updateGsheetUI(); 
+                            Swal.fire({ title: 'Tersimpan', text: 'URL Cloud berhasil diatur dan tersimpan di Akun Anda. Menarik data...', icon: 'success', timer: 2000 }); 
+                            loadFromGsheet(true);
+                        } else {
+                            Swal.fire('Error', 'Gagal menyimpan URL ke database: ' + resData.message, 'error');
+                        }
+                    } catch (e) {
+                        Swal.fire('Error', 'Gagal menghubungi server Admin untuk menyimpan URL.', 'error');
+                    }
+                } else {
+                    cloudUrl = newUrl; 
+                    data.settings.gsheet_url = cloudUrl;
+                    const uIdx = data.registered_users.findIndex(u => u.email === data.user.email);
+                    if (uIdx > -1) data.registered_users[uIdx].gsheet_url = cloudUrl;
+                    saveData();
+                    updateGsheetUI(); 
+                    Swal.fire({ title: 'Tersimpan', text: 'URL Cloud berhasil diatur (Mode Lokal). Menarik data...', icon: 'success', timer: 2000 }); 
+                    loadFromGsheet(true); 
+                }
+            } else if (newUrl === cloudUrl) {
+                Swal.fire({ title: 'Info', text: 'URL Cloud tidak berubah.', icon: 'info', timer: 1000 });
             }
+            
             input.setAttribute('readonly', true); input.classList.add('opacity-60', 'cursor-not-allowed', 'bg-[var(--input-bg)]'); input.classList.remove('bg-[var(--bg-card)]', 'border-[var(--primary)]');
-            btn.innerText = 'Edit URL Cloud'; btn.classList.remove('bg-[var(--primary)]', 'text-[var(--text-on-gradient)]', 'border-transparent'); btn.classList.add('bg-[var(--input-bg)]', 'text-[var(--text-main)]', 'border-[var(--border-color)]');
+            btn.innerHTML = 'Edit URL Cloud'; btn.classList.remove('opacity-50', 'bg-[var(--primary)]', 'text-[var(--text-on-gradient)]', 'border-transparent'); btn.classList.add('bg-[var(--input-bg)]', 'text-[var(--text-main)]', 'border-[var(--border-color)]');
             isEditingUrl = false;
         }
     }
@@ -2818,6 +2712,18 @@ function applyDataValidation(txSheet, catSheet, headers) {
   }
 }
 
+function getHash(row) {
+  return row.map(function(val) {
+    if (val instanceof Date) {
+      var y = val.getFullYear();
+      var m = (val.getMonth() + 1).toString().padStart(2, '0');
+      var d = val.getDate().toString().padStart(2, '0');
+      return y + '-' + m + '-' + d;
+    }
+    return String(val).trim().toLowerCase();
+  }).join('|');
+}
+
 function doPost(e) {
   try {
     const payload = JSON.parse(e.postData.contents);
@@ -2871,40 +2777,54 @@ function doPost(e) {
     if (action === 'append_data') {
       const inputData = payload.data;
       if (!inputData || !inputData.length) {
-        return ContentService.createTextOutput(JSON.stringify({ status: 'success', added: 0 })).setMimeType(ContentService.MimeType.JSON);
+        return ContentService.createTextOutput(JSON.stringify({ status: 'success', added: 0, updated: 0 })).setMimeType(ContentService.MimeType.JSON);
       }
 
       const allKeys = new Set();
       inputData.forEach(row => Object.keys(row).forEach(k => allKeys.add(k)));
       
       const headers = syncHeader(sheet, Array.from(allKeys));
-      
       applyDataValidation(sheet, catSheet, headers);
       
       const existingData = sheet.getDataRange().getValues();
-      const existingHashes = new Set();
       
-      if (existingData.length > 1) {
+      // MAP EXISTING ID
+      const idIndex = headers.indexOf('ID Transaksi');
+      const existingIdMap = new Map();
+      
+      if (existingData.length > 1 && idIndex !== -1) {
         for (let i = 1; i < existingData.length; i++) {
-          existingHashes.add(existingData[i].join('|'));
+          let rowId = existingData[i][idIndex];
+          if (rowId) existingIdMap.set(String(rowId), i + 1); // Simpan baris (1-based index)
         }
       }
 
+      let added = 0;
+      let updated = 0;
       const rowsToAppend = [];
+
       inputData.forEach(item => {
         const row = headers.map(h => item[h] !== undefined ? item[h] : '');
-        const rowHash = row.join('|');
-        if (!existingHashes.has(rowHash)) {
+        let itemId = item['ID Transaksi'];
+        
+        if (itemId && existingIdMap.has(String(itemId))) {
+          // UPSERT: Update baris yang sudah ada
+          let rowNum = existingIdMap.get(String(itemId));
+          sheet.getRange(rowNum, 1, 1, headers.length).setValues([row]);
+          updated++;
+        } else {
+          // APPEND: Tambah baris baru
           rowsToAppend.push(row);
-          existingHashes.add(rowHash);
+          if (itemId) existingIdMap.set(String(itemId), existingData.length + rowsToAppend.length); // Prevent duplicate append
         }
       });
 
       if (rowsToAppend.length > 0) {
         sheet.getRange(sheet.getLastRow() + 1, 1, rowsToAppend.length, headers.length).setValues(rowsToAppend);
+        added = rowsToAppend.length;
       }
 
-      return ContentService.createTextOutput(JSON.stringify({ status: 'success', added: rowsToAppend.length })).setMimeType(ContentService.MimeType.JSON);
+      return ContentService.createTextOutput(JSON.stringify({ status: 'success', added: added, updated: updated })).setMimeType(ContentService.MimeType.JSON);
     }
 
     if (action === 'fetch_data') {
@@ -2938,112 +2858,6 @@ function doPost(e) {
         const ta = document.createElement("textarea"); ta.value = code; ta.style.position = "fixed"; ta.style.left = "-9999px"; document.body.appendChild(ta); ta.focus(); ta.select();
         try { document.execCommand('copy') ? Swal.fire('Tersalin', 'Script untuk backend Cloud personal berhasil disalin. Silakan tempel di Google Apps Script Anda.', 'success') : Swal.fire('Error', 'Gagal menyalin manual.', 'error'); } catch (err) { Swal.fire('Error', 'Gagal menyalin', 'error'); }
         document.body.removeChild(ta);
-    }
-    
-    function changeAvatar() { document.getElementById('avatar-input').click(); }
-    function previewAvatar(input) { if (input.files && input.files[0]) { const reader = new FileReader(); reader.onload = function(e) { document.getElementById('settings-avatar').src = e.target.result; if(data.user) { data.user.avatar = e.target.result; saveData(); } }; reader.readAsDataURL(input.files[0]); } }
-    function toggleCustomInput(id) {
-        const sel = document.getElementById(id); const p = sel.parentElement;
-        if(sel.tagName === 'SELECT') { const inp = document.createElement('input'); inp.id = id; inp.className = 'input-field flex-1'; inp.placeholder = 'Ketik tipe custom...'; p.replaceChild(inp, sel); } 
-        else { const nSel = document.createElement('select'); nSel.id = id; nSel.className = 'input-field flex-1'; nSel.innerHTML = id.includes('asset') ? '<option>Tunai & Tabungan</option><option>Investasi</option><option>Properti</option>' : '<option value="Cash">Cash</option><option value="Bank">Bank</option><option value="Credit">Kartu Kredit</option><option value="E-Wallet">E-Wallet</option>'; p.replaceChild(nSel, sel); }
-    }
-
-    function openReceiptScanner() { toggleModal('receipt-modal', true); }
-
-    function processReceipt() {
-        const text = document.getElementById('receipt-text').value;
-        if(!text) return;
-        const lines = text.split('\n');
-        let count = 0;
-        lines.forEach(line => {
-            const match = line.match(/(\D+)(\d+)/);
-            if(match) {
-                const desc = match[1].trim();
-                const amount = parseInt(match[2]);
-                data.tx.push({ id: Date.now() + Math.random(), type: 'expense', amount: amount, cat: 'Belanja', payment: 'Tunai', date: new Date().toISOString().split('T')[0], desc: desc });
-                if(data.wallets[0]) data.wallets[0].balance -= amount;
-                count++;
-            }
-        });
-        saveData();
-        toggleModal('receipt-modal', false);
-        Swal.fire('Sukses', `Berhasil memproses ${count} item dari struk!`, 'success');
-        renderHome();
-    }
-
-    function startVoiceRecognition() {
-        if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
-            Swal.fire('Error', 'Browser tidak mendukung fitur suara', 'error'); return;
-        }
-        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-        const recognition = new SpeechRecognition();
-        recognition.lang = 'id-ID';
-        recognition.interimResults = false;
-        
-        recognition.onresult = function(event) {
-            const transcript = event.results[0][0].transcript;
-            parseVoiceInput(transcript);
-            Swal.fire({ icon: 'success', title: 'Suara Terdeteksi', text: `"${transcript}"`, timer: 1500, showConfirmButton: false });
-        };
-        recognition.onerror = function(event) { console.error(event.error); };
-        
-        toggleModal('add-tx-modal', true);
-        prepareAddTxNew();
-        setTimeout(() => recognition.start(), 500);
-    }
-
-    function parseVoiceInput(text) {
-        const numbers = text.match(/\d+/g);
-        let amount = 0;
-        let multiplier = 1;
-        if (text.toLowerCase().includes('juta')) multiplier = 1000000;
-        else if (text.toLowerCase().includes('ribu')) multiplier = 1000;
-
-        if (numbers) {
-            const rawNum = parseInt(numbers.join(''));
-            amount = rawNum;
-            if (amount < 1000 && multiplier > 1) amount *= multiplier;
-        }
-        
-        if (amount > 0) document.getElementById('tx-amount-new').value = new Intl.NumberFormat('id-ID').format(amount);
-        document.getElementById('tx-desc-new').value = text;
-        autoCategorize(text);
-    }
-
-    function openForecastModal(goalId) {
-        const goal = data.goals.find(g => g.id == goalId);
-        if(!goal) return;
-        
-        toggleModal('forecast-modal', true);
-        document.getElementById('forecast-title').innerText = `Prediksi: ${goal.name}`;
-        
-        const totalInc = data.tx.filter(t => t.type === 'income').reduce((a,b) => a+b.amount, 0);
-        const totalExp = data.tx.filter(t => t.type === 'expense').reduce((a,b) => a+b.amount, 0);
-        const avgSaving = Math.max(0, (totalInc - totalExp) / 1); 
-        
-        document.getElementById('forecast-saving').innerText = formatRupiah(avgSaving);
-        
-        const remaining = goal.target - goal.current;
-        let months = 0;
-        if(remaining <= 0) {
-             document.getElementById('forecast-time').innerText = "Tercapai! 🎉";
-        } else if (avgSaving <= 0) {
-             document.getElementById('forecast-time').innerText = "Tidak Ada Surplus";
-        } else {
-            months = Math.ceil(remaining / avgSaving);
-            document.getElementById('forecast-time').innerText = `${months} Bulan Lagi`;
-        }
-        
-        const chart = document.getElementById('forecast-chart'); chart.innerHTML = '';
-        const pctCurrent = Math.min((goal.current / goal.target) * 100, 100);
-        chart.innerHTML += `<div class="w-8 bg-[var(--input-bg)] rounded-t-lg relative group h-full flex items-end"><div style="height:${pctCurrent}%" class="w-full bg-[var(--text-positive)] rounded-t-lg transition-all duration-1000"></div></div>`;
-        
-        for(let i=1; i<=5; i++) {
-             let proj = goal.current + (avgSaving * i);
-             let pct = Math.min((proj / goal.target) * 100, 100);
-             let opacity = 1 - (i * 0.15);
-             chart.innerHTML += `<div class="w-8 bg-[var(--input-bg)] rounded-t-lg relative group h-full flex items-end"><div style="height:${pct}%" class="w-full bg-[var(--primary)] opacity-[${opacity}] rounded-t-lg transition-all duration-1000 delay-${i*100}"></div></div>`;
-        }
     }
 
     function autoCategorize(text) {
